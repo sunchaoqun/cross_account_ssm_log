@@ -1,11 +1,14 @@
 # Cross Account SSM Log
 
+```bash
 aws ssm update-document --name "SSM-SessionManagerRunShell" --content "file://SessionManagerRunShell.json"     --document-version '$LATEST'
+```
 
 
 "ACCOUNT_ID": Center log account id
 "billysun-sub": Center log bucket name
 
+```json
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -36,6 +39,7 @@ aws ssm update-document --name "SSM-SessionManagerRunShell" --content "file://Se
         }
     ]
 }
+```
 
 lambda_function.py 
 
