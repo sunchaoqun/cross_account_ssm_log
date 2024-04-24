@@ -1,0 +1,22 @@
+{
+    "schemaVersion": "1.0",
+    "description": "Document to hold regional settings for Session Manager",
+    "sessionType": "Standard_Stream",
+    "inputs": {
+        "s3BucketName": "billysun-sub",
+        "s3KeyPrefix": "child-ssm-logs",
+        "s3EncryptionEnabled": false,
+        "cloudWatchLogGroupName": "",
+        "cloudWatchEncryptionEnabled": false,
+        "cloudWatchStreamingEnabled": false,
+        "kmsKeyId": "",
+        "runAsEnabled": false,
+        "runAsDefaultUser": "ec2-user",
+        "idleSessionTimeout": "20",
+        "maxSessionDuration": "",
+        "shellProfile": {
+            "windows": "",
+            "linux": "userInfo=$(aws sts get-caller-identity --output text); echo \"Run by: $userInfo\""
+        }
+    }
+}
