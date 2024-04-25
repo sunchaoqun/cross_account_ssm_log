@@ -4,6 +4,14 @@
 aws ssm update-document --name "SSM-SessionManagerRunShell" --content "file://SessionManagerRunShell.json"     --document-version '$LATEST'
 ```
 
+SessionManagerRunShell.json
+
+```json
+"kmsKeyId": "arn:aws:kms:ap-southeast-1:ACCOUNT_ID:key/mrk-0655ff186bbf46e2a511d52ce7c4399c",
+```
+
+Suggest to create and assign the other account can access permission
+
 
 "ACCOUNT_ID": Center log account id
 "billysun-sub": Center log bucket name
