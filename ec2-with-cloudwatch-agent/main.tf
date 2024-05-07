@@ -52,7 +52,7 @@ resource "aws_iam_policy" "decrypt_policy" {
         {
             "Effect": "Allow",
             "Action": "kms:Decrypt",
-            "Resource": "arn:aws:kms:ap-southeast-1:605852794516:key/mrk-0655ff186bbf46e2a511d52ce7c4399c"
+            "Resource": "arn:aws:kms:ap-southeast-1:ACCOUNT_ID(Cross-Account):key/mrk-0655ff186bbf46e2a511d52ce7c4399c"
         }
     ]
 }
@@ -214,7 +214,7 @@ resource "aws_sns_topic" "ssh_alerts_topic" {
 resource "aws_sns_topic_subscription" "email_subscription" {
   topic_arn = aws_sns_topic.ssh_alerts_topic.arn
   protocol  = "email"
-  endpoint  = "billysun@amazon.com"  # 替换为你希望接收通知的电子邮件地址
+  endpoint  = "your-email-address@domain"  # 替换为你希望接收通知的电子邮件地址
 }
 
 resource "aws_cloudwatch_metric_alarm" "ssh_event_alarm" {
